@@ -5,12 +5,16 @@ using namespace std;
 
 int main()
 {
-    int n, factorialTrailingZeros;
+    double n;
+    int factorialTrailingZeros = 0;
     cin >> n;
 
-    /// For each 5! the trailing zeros increase by 1
-    /// For each 25! the trailing zeros increase by 1
-    factorialTrailingZeros = n / 5 + n / 25;
+    while (n >= 1)
+    {
+        double currZeroesToAdd = n / 5.0;
+        factorialTrailingZeros += (int)currZeroesToAdd;
+        n = n / 5.0;
+    }
 
     cout << factorialTrailingZeros << endl;
 
