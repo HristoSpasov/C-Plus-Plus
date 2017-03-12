@@ -18,19 +18,21 @@ int main()
 {
     /// Read number of input rows
     cout << "Enter numbers of rows to read: ";
-    int numberOfRows;
+    int numberOfRows, currline = 1;
     cin >> numberOfRows;
     cin.ignore();
 
     /// Loop over each row
     while(numberOfRows > 0)
     {
+        cout << "Enter line " << currline << " elements separated by at least one whitespace: ";
         string currLine = "";
         getline(cin, currLine);
         int resultLenght = 0;
         GetRowElemetsCount (currLine, resultLenght); /// Get the lenght of current row
         parseNumbers(currLine, resultLenght); /// Parse numbers to int[] array
         numberOfRows--;
+        currline++;
     }
 
     cout << "Total sum is: " << totalSum << endl; /// Print result;
